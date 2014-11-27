@@ -1,0 +1,52 @@
+# == Class: haproxy
+
+class haproxy {
+	include config
+		
+    	package { "haproxy": 
+		ensure => present
+		}
+	service	{'haproxy' :
+		ensure => 'running',
+		enable => 'true',
+		require => Package['haproxy'],
+		} 
+	file { '/etc/default/haproxy':
+        	content => 'ENABLED=1',
+        	require => Package['haproxy'],
+             	}
+	concat { '/etc/haproxy/haproxy.cfg':
+      		owner   => '0',
+      		group   => '0',
+      		mode    => '0644',
+      		require => Package['haproxy'],
+    		}
+ 	concat::fragment { '00-header':
+      		target  => '/etc/haproxy/haproxy.cfg',
+      		order   => '01',
+      		content => "# This file managed by Puppet\n",
+    		}
+#	concat::fragment { 'haproxy-main':
+#      		target  => '/etc/haproxy/haproxy.cfg',
+#      		order   => '10',
+#      		content => template('haproxy/haproxy_main.erb'),
+#    		}
+#	concat::fragment { 'haproxy-forntend':
+#      		target  => '/etc/haproxy/haproxy.cfg',
+#      		order   => '20',
+#      		content => template('haproxy/haproxy_front.erb'),
+#    		}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

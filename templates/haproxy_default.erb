@@ -1,0 +1,12 @@
+global
+	log 127.0.0.1	local0 info
+	log 127.0.0.1	local1 notice
+	#log loghost	local0 info
+	maxconn 4096
+	#chroot /usr/share/haproxy
+	user haproxy
+	group haproxy
+	daemon
+	#debug
+	#quiet
+

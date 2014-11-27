@@ -1,0 +1,10 @@
+frontend <%= @fname %>
+	mode            <%= @mode %>
+	bind            <%= @bind %>
+<% @option.each do |option| -%>
+	option          <%= option %>
+<% end -%>
+	acl <%= @special_acl_name %> hdr_dom(host) -i <%= @special_host_name %>
+        use_backend <%= @special_backend_name %> if <%= @special_acl_name %>
+	default_backend <%= @default_backend %>
+	
