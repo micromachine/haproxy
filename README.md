@@ -4,7 +4,6 @@
 This module produce haproxy config like this :
 
 root@srv04:/etc/haproxy# cat haproxy.cfg
-# Managed by Puppet
 global
 	nbproc   4
 	maxconn  4096
