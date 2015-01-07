@@ -2,11 +2,11 @@
 
 #### Info
 This module generate haproxy.cfg with two backends  
+-----
 
-##
 defaults
-        log             global
-        option          httplog
+	log             global
+	option          httplog
         option          redispatch
         option          dontlognull
         
