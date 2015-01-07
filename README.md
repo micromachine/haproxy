@@ -7,14 +7,14 @@ This module generate haproxy.cfg with two backends
 defaults
 	log             global
 	option          httplog
-        option          redispatch
-        option          dontlognull
-        retries         3
-        maxconn         2000
-        timeout connect 5000
-        timeout client  50000
-        timeout server  50000
-        errorfile       400 /etc/haproxy/errors/400.http
+	option          redispatch
+	option          dontlognull
+	retries         3
+	maxconn         2000
+	timeout connect 5000
+	timeout client  50000
+	timeout server  50000
+	errorfile       400 /etc/haproxy/errors/400.http
         errorfile       403 /etc/haproxy/errors/403.http
         errorfile       408 /etc/haproxy/errors/408.http
         errorfile       500 /etc/haproxy/errors/500.http
