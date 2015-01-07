@@ -3,13 +3,12 @@
 #### Info
 This module generate haproxy.cfg with two backends  
 -----
-
+```
 defaults
 	log             global
 	option          httplog
         option          redispatch
         option          dontlognull
-        
         retries         3
         maxconn         2000
         timeout connect 5000
@@ -49,4 +48,4 @@ backend special_webfarm
         server webB  10.0.3.12:81 cookie B
         server webC  10.0.3.13:81 cookie C
 
-
+```
