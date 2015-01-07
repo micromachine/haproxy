@@ -3,7 +3,7 @@
 #### Info
 This module generate haproxy.cfg with two backends  
 
-
+##
 defaults
         log             global
         option          httplog
